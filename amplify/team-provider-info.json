@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-einlabonlineshop-dev-4ca51-authRole",
+      "UnauthRoleArn": "arn:aws:iam::098684198661:role/amplify-einlabonlineshop-dev-4ca51-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::098684198661:role/amplify-einlabonlineshop-dev-4ca51-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-einlabonlineshop-dev-4ca51-deployment",
+      "UnauthRoleName": "amplify-einlabonlineshop-dev-4ca51-unauthRole",
+      "StackName": "amplify-einlabonlineshop-dev-4ca51",
+      "StackId": "arn:aws:cloudformation:eu-central-1:098684198661:stack/amplify-einlabonlineshop-dev-4ca51/82373d00-ab7b-11ef-9132-0a7c89ed3fa9",
+      "AmplifyAppId": "d1ajyas3xv5xbl"
+    },
+    "categories": {
+      "auth": {
+        "einlabonlineshop971ec8e0": {}
+      },
+      "storage": {
+        "einlabStorage": {}
+      }
+    }
+  }
+}

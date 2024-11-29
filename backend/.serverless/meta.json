@@ -1,0 +1,392 @@
+{
+  "/Users/toffy/Documents/quests/stone_path/professional/portfolio/portfolio_einlab_shop/backend": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.13",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>",
+      "self": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "instagram-fetcher",
+            "plugins": [
+              "serverless-dotenv-plugin"
+            ],
+            "provider": {
+              "name": "aws",
+              "runtime": "python3.9",
+              "region": "eu-central-1",
+              "environment": {
+                "BUCKET_NAME": "einlab-storage-gallery4ca51-dev",
+                "OPENAI_API_KEY": "<REDACTED>",
+                "INSTAGRAM_ACCESS_TOKEN": "<REDACTED>"
+              },
+              "iam": {
+                "role": {
+                  "statements": [
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "s3:PutObject",
+                        "s3:GetObject"
+                      ],
+                      "Resource": [
+                        "arn:aws:s3:::einlab-storage-gallery4ca51-dev/*"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "functions": {
+              "updateGallery": {
+                "handler": "fetch_ig_posts.handler",
+                "events": [
+                  {
+                    "schedule": "cron(0 0 * * ? *)"
+                  }
+                ],
+                "timeout": 300,
+                "memorySize": 256
+              }
+            },
+            "custom": {
+              "bucketName": "einlab-storage-gallery4ca51-dev"
+            },
+            "package": {
+              "patterns": [
+                "!**/*.test.py",
+                "!**/__pycache__/**",
+                "!.pytest_cache/**",
+                "!.venv/**",
+                "fetch_ig_posts.py"
+              ]
+            }
+          },
+          "configFileDirPath": "/Users/toffy/Documents/quests/stone_path/professional/portfolio/portfolio_einlab_shop/backend",
+          "config": {
+            "type": "self"
+          },
+          "options": {
+            "function": "updateGallery",
+            "aws-profile": "amplify-user-1"
+          },
+          "stage": "dev",
+          "dashboard": null,
+          "logger": {
+            "namespace": "s:core:resolver:self",
+            "prefix": null,
+            "prefixColor": null
+          },
+          "_credentialsPromise": "<REDACTED>"
+        },
+        "resolvers": {}
+      },
+      "env": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "instagram-fetcher",
+            "plugins": [
+              "serverless-dotenv-plugin"
+            ],
+            "provider": {
+              "name": "aws",
+              "runtime": "python3.9",
+              "region": "eu-central-1",
+              "environment": {
+                "BUCKET_NAME": "einlab-storage-gallery4ca51-dev",
+                "OPENAI_API_KEY": "<REDACTED>",
+                "INSTAGRAM_ACCESS_TOKEN": "<REDACTED>"
+              },
+              "iam": {
+                "role": {
+                  "statements": [
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "s3:PutObject",
+                        "s3:GetObject"
+                      ],
+                      "Resource": [
+                        "arn:aws:s3:::einlab-storage-gallery4ca51-dev/*"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "functions": {
+              "updateGallery": {
+                "handler": "fetch_ig_posts.handler",
+                "events": [
+                  {
+                    "schedule": "cron(0 0 * * ? *)"
+                  }
+                ],
+                "timeout": 300,
+                "memorySize": 256
+              }
+            },
+            "custom": {
+              "bucketName": "einlab-storage-gallery4ca51-dev"
+            },
+            "package": {
+              "patterns": [
+                "!**/*.test.py",
+                "!**/__pycache__/**",
+                "!.pytest_cache/**",
+                "!.venv/**",
+                "fetch_ig_posts.py"
+              ]
+            }
+          },
+          "configFileDirPath": "/Users/toffy/Documents/quests/stone_path/professional/portfolio/portfolio_einlab_shop/backend",
+          "config": {
+            "type": "env"
+          },
+          "options": {
+            "function": "updateGallery",
+            "aws-profile": "amplify-user-1"
+          },
+          "stage": "dev",
+          "dashboard": null,
+          "logger": {
+            "namespace": "s:core:resolver:env",
+            "prefix": null,
+            "prefixColor": null
+          },
+          "_credentialsPromise": "<REDACTED>"
+        },
+        "resolvers": {}
+      },
+      "sls": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "service": "instagram-fetcher",
+            "plugins": [
+              "serverless-dotenv-plugin"
+            ],
+            "provider": {
+              "name": "aws",
+              "runtime": "python3.9",
+              "region": "eu-central-1",
+              "environment": {
+                "BUCKET_NAME": "einlab-storage-gallery4ca51-dev",
+                "OPENAI_API_KEY": "<REDACTED>",
+                "INSTAGRAM_ACCESS_TOKEN": "<REDACTED>"
+              },
+              "iam": {
+                "role": {
+                  "statements": [
+                    {
+                      "Effect": "Allow",
+                      "Action": [
+                        "s3:PutObject",
+                        "s3:GetObject"
+                      ],
+                      "Resource": [
+                        "arn:aws:s3:::einlab-storage-gallery4ca51-dev/*"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "stage": "dev",
+              "versionFunctions": true
+            },
+            "functions": {
+              "updateGallery": {
+                "handler": "fetch_ig_posts.handler",
+                "events": [
+                  {
+                    "schedule": "cron(0 0 * * ? *)"
+                  }
+                ],
+                "timeout": 300,
+                "memorySize": 256
+              }
+            },
+            "custom": {
+              "bucketName": "einlab-storage-gallery4ca51-dev"
+            },
+            "package": {
+              "patterns": [
+                "!**/*.test.py",
+                "!**/__pycache__/**",
+                "!.pytest_cache/**",
+                "!.venv/**",
+                "fetch_ig_posts.py"
+              ]
+            }
+          },
+          "configFileDirPath": "/Users/toffy/Documents/quests/stone_path/professional/portfolio/portfolio_einlab_shop/backend",
+          "config": {
+            "type": "sls"
+          },
+          "options": {
+            "function": "updateGallery",
+            "aws-profile": "amplify-user-1"
+          },
+          "stage": "dev",
+          "dashboard": null,
+          "logger": {
+            "namespace": "s:core:resolver:sls",
+            "prefix": null,
+            "prefixColor": null
+          },
+          "_credentialsPromise": "<REDACTED>"
+        },
+        "resolvers": {}
+      }
+    },
+    "composeServiceName": null,
+    "servicePath": "/Users/toffy/Documents/quests/stone_path/professional/portfolio/portfolio_einlab_shop/backend",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "instagram-fetcher",
+      "plugins": [
+        "serverless-dotenv-plugin"
+      ],
+      "provider": {
+        "name": "aws",
+        "runtime": "python3.9",
+        "region": "eu-central-1",
+        "environment": {
+          "BUCKET_NAME": "einlab-storage-gallery4ca51-dev",
+          "OPENAI_API_KEY": "<REDACTED>",
+          "INSTAGRAM_ACCESS_TOKEN": "<REDACTED>"
+        },
+        "iam": {
+          "role": {
+            "statements": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "s3:PutObject",
+                  "s3:GetObject"
+                ],
+                "Resource": [
+                  "arn:aws:s3:::einlab-storage-gallery4ca51-dev/*"
+                ]
+              }
+            ]
+          }
+        },
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "functions": {
+        "updateGallery": {
+          "handler": "fetch_ig_posts.handler",
+          "events": [
+            {
+              "schedule": "cron(0 0 * * ? *)"
+            }
+          ],
+          "timeout": 300,
+          "memorySize": 256
+        }
+      },
+      "custom": {
+        "bucketName": "einlab-storage-gallery4ca51-dev"
+      },
+      "package": {
+        "patterns": [
+          "!**/*.test.py",
+          "!**/__pycache__/**",
+          "!.pytest_cache/**",
+          "!.venv/**",
+          "fetch_ig_posts.py"
+        ]
+      }
+    },
+    "serviceRawFile": "service: instagram-fetcher\n\nplugins:\n  - serverless-dotenv-plugin\n\nprovider:\n  name: aws\n  runtime: python3.9\n  region: eu-central-1\n  environment:\n    BUCKET_NAME: ${self:custom.bucketName}\n    OPENAI_API_KEY: ${env:OPENAI_API_KEY}\n    INSTAGRAM_ACCESS_TOKEN: ${env:INSTAGRAM_ACCESS_TOKEN}\n  iam:\n    role:\n      statements:\n        - Effect: Allow\n          Action:\n            - s3:PutObject\n            - s3:GetObject\n          Resource: \n            - arn:aws:s3:::${self:custom.bucketName}/*\n\nfunctions:\n  updateGallery:\n    handler: fetch_ig_posts.handler\n    events:\n      - schedule: cron(0 0 * * ? *)  # Midnight every day\n    timeout: 300  # 5 minutes\n    memorySize: 256\n\ncustom:\n  bucketName: einlab-storage-gallery4ca51-dev\n\npackage:\n  patterns:\n    - '!**/*.test.py'\n    - '!**/__pycache__/**'\n    - '!.pytest_cache/**'\n    - '!.venv/**'\n    - fetch_ig_posts.py\n",
+    "command": [
+      "invoke",
+      "local"
+    ],
+    "options": {
+      "function": "updateGallery",
+      "aws-profile": "amplify-user-1"
+    },
+    "error": {
+      "message": "Serverless plugin \"serverless-dotenv-plugin\" not found. Make sure it's installed and listed in the \"plugins\" section of your serverless config file. Use the --debug flag to learn more.",
+      "stack": "ServerlessError2: Serverless plugin \"serverless-dotenv-plugin\" not found. Make sure it's installed and listed in the \"plugins\" section of your serverless config file. Use the --debug flag to learn more.\n    at PluginManager.resolveServicePlugins (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:925:2671)\n    at async PluginManager.loadAllPlugins (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:925:1293)\n    at async Serverless.init (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:932:9985)\n    at async runFramework (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:980:1336)\n    at async route (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:1010:14772)\n    at async Object.run2 [as run] (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:1010:15173)\n    at async run3 (file:///Users/toffy/.serverless/releases/4.4.13/package/dist/sf-core.js:1010:16435)",
+      "code": "PLUGIN_NOT_FOUND"
+    },
+    "params": {},
+    "machineId": "ea8710bbe238997e131c1d206ece2301",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "6f307aa5-d2b5-4637-b4a3-c273d4f19c68",
+    "orgName": "toffydee",
+    "userId": "jt3kFnC3qlvj613rVW",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "toffydee",
+    "subscription": null,
+    "userEmail": "tobias.dellert@mailbox.org",
+    "serviceProviderAwsRegion": "eu-central-1",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "098684198661",
+    "projectType": "traditional",
+    "versionSf": "4.4.13",
+    "serviceUniqueId": "arn:aws:cloudformation:eu-central-1:098684198661:stack/amplify-einlabonlineshop-dev-4ca51-autheinlabonlineshop971ec8e0-92TTB19Q8VFP/8001fb90-ab7d-11ef-9772-0a3a3dad67c5",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:eu-central-1:098684198661:stack/amplify-einlabonlineshop-dev-4ca51-autheinlabonlineshop971ec8e0-92TTB19Q8VFP/8001fb90-ab7d-11ef-9772-0a3a3dad67c5",
+    "serviceProviderAwsCfStackCreated": "2024-11-25T22:34:58.268Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "UserPoolId",
+        "OutputValue": "eu-central-1_SlAUzAOZy",
+        "Description": "Id for the user pool"
+      },
+      {
+        "OutputKey": "AppClientIDWeb",
+        "OutputValue": "4dfdr8l5m3s17h7tpf6rihmd3l",
+        "Description": "The user pool app client id for web"
+      },
+      {
+        "OutputKey": "AppClientID",
+        "OutputValue": "5q6gj43pb1gkbtnrn0gtds1i51",
+        "Description": "The user pool app client id"
+      },
+      {
+        "OutputKey": "IdentityPoolId",
+        "OutputValue": "eu-central-1:43284f2f-672d-4afc-a1bf-14d662c0d451",
+        "Description": "Id for the identity pool"
+      },
+      {
+        "OutputKey": "UserPoolArn",
+        "OutputValue": "arn:aws:cognito-idp:eu-central-1:098684198661:userpool/eu-central-1_SlAUzAOZy",
+        "Description": "Arn for the user pool"
+      },
+      {
+        "OutputKey": "IdentityPoolName",
+        "OutputValue": "einlabonlineshop971ec8e0_identitypool_971ec8e0__dev"
+      },
+      {
+        "OutputKey": "UserPoolName",
+        "OutputValue": "einlabonlineshop971ec8e0_userpool_971ec8e0"
+      }
+    ]
+  }
+}

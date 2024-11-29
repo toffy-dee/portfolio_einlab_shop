@@ -1,0 +1,22 @@
+{
+  "name": "instagram-fetcher",
+  "version": "1.0.0",
+  "description": "Lambda function to fetch Instagram posts",
+  "main": "dist/fetchPosts.js",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1502.0",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.126",
+    "@types/node": "^20.9.4",
+    "serverless": "^3.38.0",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-python-requirements": "^6.1.1",
+    "typescript": "^5.3.2"
+  }
+}

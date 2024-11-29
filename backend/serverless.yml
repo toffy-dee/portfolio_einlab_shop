@@ -1,0 +1,49 @@
+service: instagram-fetcher
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-python-requirements
+
+custom:
+  dotenv:
+    path: .env
+  bucketName: einlab-storage-gallery4ca51-dev
+  pythonRequirements:
+    dockerizePip: true
+    layer:
+      name: python-deps
+      description: Python dependencies
+
+provider:
+  name: aws
+  runtime: python3.10
+  region: eu-central-1
+  environment:
+    BUCKET_NAME: ${self:custom.bucketName}
+    OPENAI_API_KEY: ${file(./config/envVars.js):getEnvVars.openaiApiKey}
+    INSTAGRAM_ACCESS_TOKEN: ${file(./config/envVars.js):getEnvVars.instagramAccessToken}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:GetObject
+          Resource: 
+            - arn:aws:s3:::${self:custom.bucketName}/*
+
+functions:
+  updateGallery:
+    handler: src/fetch_ig_posts.handler
+    events:
+      - schedule: cron(0 0 * * ? *)
+    timeout: 300
+    memorySize: 256
+
+package:
+  patterns:
+    - '!**/*.test.py'
+    - '!**/__pycache__/**'
+    - '!.pytest_cache/**'
+    - '!.venv/**'
+    - src/fetch_ig_posts.py
